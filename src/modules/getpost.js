@@ -1,28 +1,8 @@
-const postsList = document.querySelector('.post-list');
-const addPostForm = document.querySelector('.add-post-form');
-const nameValue = document.querySelector('#name-value');
-const shortValue = document.querySelector('#short-value');
-const imgValue = document.getElementById('image-value');
-const descValue = document.querySelector('#body-value');
-const btnSubmit = document.querySelector('.btn-submit');
-const modalNewBg = document.querySelector('.modalNew-bg');
-const modalBtn = document.querySelector('.newBtn');
-const modalClose = document.querySelector('.modalNew-close');
-const modalMoreBg = document.querySelector('.modalMore-bg');
-const modalMoreClose = document.querySelector('.modalMore-close');
 const cardName = document.querySelector('.card-name');
 const cardDescr = document.querySelector('.descr');
 const cardImage = document.querySelector('#moreImage');
-
-modalBtn.addEventListener('click', () => {
-  modalNewBg.classList.add('modal-active');
-});
-modalClose.addEventListener('click', () => {
-  modalNewBg.classList.remove('modal-active');
-});
-modalMoreClose.addEventListener('click', () => {
-  modalMoreBg.classList.remove('modal-active');
-});
+const postsList = document.querySelector('.post-list');
+const btnSubmit = document.querySelector('.btn-submit');
 
 let outPut = '';
 
@@ -57,9 +37,6 @@ const renderPosts = (posts) => {
 };
 
 const url = 'https://character-database.becode.xyz/characters';
-
-// Get read the posts
-// Method:Get
 
 fetch(url)
   .then((response) => response.json())
@@ -142,56 +119,4 @@ postsList.addEventListener('click', (event) => {
   }
 });
 
-function encodeImageFileAsURL() {
-  let imgValue = document.querySelector('#image-value').files;
-  if (imgValue.length > 0) {
-    let fileToLoad = imgValue[0];
-
-    let fileReader = new FileReader();
-
-    fileReader.onload = function (fileLoadedEvent) {
-      let newSrc = fileLoadedEvent.target.result.replace(
-        /^data:image\/\w+;base64,/,
-        ''
-      );
-
-      let newImage = document.createElement('img');
-      newImage.src = newSrc;
-
-      document.getElementById('imgTest').innerHTML = newImage.innerHTML;
-
-      // create - insert new post
-      // method: POST
-
-      addPostForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: nameValue.value,
-            shortDescription: shortValue.value,
-            image: newSrc,
-            description: descValue.value,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            const dataArr = [];
-            dataArr.push(data);
-            renderPosts(dataArr);
-          });
-
-        // RESET input field to empty after submit
-        nameValue.value = '';
-        shortValue.value = '';
-        imgValue.value = '';
-        descValue.value = '';
-      });
-    };
-    fileReader.readAsDataURL(fileToLoad);
-  }
-}
+export { postsList, renderPosts, outPut, url };

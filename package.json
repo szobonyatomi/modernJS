@@ -1,0 +1,28 @@
+{
+  "name": "modernjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url='./'",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szobonyatomi/modernJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szobonyatomi/modernJS/issues"
+  },
+  "homepage": "https://github.com/szobonyatomi/modernJS#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  }
+}

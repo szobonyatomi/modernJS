@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
-    <script
+    <!--<script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
       crossorigin="anonymous"
-    ></script>
+    ></script>-->
+
     <!--Font style  -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;800&display=swap"
@@ -75,12 +76,8 @@
                 <label class="imgUpl label" for="psw"
                   ><b>Select image:</b></label
                 >
-                <input
-                  class="button imgUplInput"
-                  id="image-value"
-                  type="file"
-                  onchange="encodeImageFileAsURL()"
-                />
+                <input type="file" />
+                <img src="" height="200" alt="Image preview..." />
               </div>
               <div id="imgTest"></div>
               <div class="from-group discrField">
@@ -98,27 +95,28 @@
           </div>
         </div>
       </div>
-      <!-- modal More-->
-      <div class="modalMore-bg">
-        <div class="modal">
-          <div class="charMoreModal">
-            <img alt="" id="moreImage" />
-            <div class="charInfos">
-              <h3 class="card-name" id="name-value"></h3>
-              <p class="descr" id="body-value"></p>
-            </div>
-            <span class="modalMore-close">X</span>
-          </div>
-        </div>
-      </div>
 
       <div class="post-list"></div>
     </div>
-    <script src="./src/sripts/app.js"></script>
+    <!-- modal More-->
+    <div class="modalMore-bg">
+      <div class="modal">
+        <div class="charMoreModal">
+          <img alt="" id="moreImage" />
+          <div class="charInfos">
+            <h3 class="card-name" id="name-value"></h3>
+            <p class="descr" id="body-value"></p>
+          </div>
+          <span class="modalMore-close">X</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p class="footText">
+        BeCode - Jespen 04.27 - Character-Catalog Project - Tariq & Tomi @2021
+      </p>
+    </footer>
+    <script src="./index.js"></script>
   </body>
-  <footer>
-    <p class="footText">
-      BeCode - Jespen 04.27 - Character-Catalog Project - Tariq & Tomi @2021
-    </p>
-  </footer>
 </html>
