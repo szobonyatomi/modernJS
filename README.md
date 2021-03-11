@@ -9,7 +9,6 @@ Welcome to Modern-js-application JavaScript.
 - be able to use a package manager to import third-party libraries in your code
 - be able to use linters and formatters to make your code cleaner and more bug-free
 - be able to optimize your code to be shipped to a browser faster
--
 
 ## The Tools & Instructions used
 
